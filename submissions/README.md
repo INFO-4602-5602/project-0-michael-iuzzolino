@@ -21,3 +21,6 @@
 - **Coordinate Views**
 
   For the barcharts of part 2, when the mouse hovers over a bar in one chart, the corresponding bar in the other chart is simultaneously highlighted. Further, each of the datasets can be independently sorted, as suggested in part 2 ("the order of the bars should correspond to either their natural order in the dataset or to the relative x-value"). When the sorting is applied, the simultaneous highlighting of the x and y charts remains intact.
+
+## Collaborators
+  None; worked independently.
