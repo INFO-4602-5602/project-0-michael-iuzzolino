@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Project 0</title>
+<style type="text/css" href="project0.css"></style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!--Put your D3 import statement between these two lines-->
+<!--    <script src="https://d3js.org/d3.v3.min.js"></script>-->
+  <script src="scripts/d3.min.js"></script>
+  <script src="scripts/barChart.js"></script>
+  <script src="scripts/scatterPlot.js"></script>
+      
+  
+<!--Put your D3 import statement between these two lines-->
+</head>
+
+<body>
+	<div id="partOne">
+        <h1>Part One: </h1>
+	</div>
+    
+    <div id="partTwo">
+        <h1>Part Two: </h1>
+        <div id="barchart">
+        </div>
+	</div>
+    
+    <div id="partThree">
+        <h1>Part Three &amp; Four: </h1>
+        <div id="scatterplot">
+            <p id="scatterLabel"></p>
+        </div>
+	</div>
+    
+    <div id="partFive">
+        <h1>Part Five: </h1>
+        <div id="scatterplotSet">
+        </div>
+	</div>
+    
+    <script type="text/javascript">
+        // Put your part one code here ***********************
+      
+        d3.queue()
+          .defer(d3.csv, "data/anscombe_I.csv")
+          .defer(d3.csv, "data/anscombe_II.csv")
+          .defer(d3.csv, "data/anscombe_III.csv")
+          .defer(d3.csv, "data/anscombe_IV.csv")
+          .await(function(error, data1, data2, data3, data4)
+          {
+            checkDataset(data1, "anscombe_I.csv");
+            checkDataset(data2, "anscombe_II.csv");
+            checkDataset(data3, "anscombe_III.csv");
+            checkDataset(data4, "anscombe_IV.csv");
+          });
+      
+        
+        // Leave this to test your data uploading. All data uploading should be above this line
+        function checkDataset(dataset, data_path) {
+            if (dataset.length == 11)
+                $("#partOne").append("<p>" + data_path + " loaded correctly</p>");
+            else
+                $("#partOne").append("<p>data loaded incorrectly. Try using the debugger to help you find the bug!</p>");
+        }
+        
+      
+      
+        // Put your part two code here ***********************
+        var dataset_id = "anscombe_I";
+        var dataset_name = "Anscombe I";
+        partTwo(dataset_id, dataset_name);
+        
+      
+        // Put your part three & four code here ***********************
+        scatterPlot(true);
+      
+      
+        // Put your part five code here ***********************
+        scatterPlot(false);
+      
+      
+      
+      
+    </script>
+</body>
+
+
+</html>
