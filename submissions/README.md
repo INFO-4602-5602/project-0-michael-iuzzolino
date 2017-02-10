@@ -1,5 +1,5 @@
 # Project 0: Visualizing Anscombe’s Quartet
-
+<img src="imgs/fig1.png" width=400></img>
 ## Bells Rung
 - **Tooltips**
 
